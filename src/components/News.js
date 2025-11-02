@@ -254,15 +254,14 @@ export class News extends Component {
         {/* Bootstrap Row */}
         <div className="row"> 
           {/* Bootstrap Column (col-md-4 means it takes 4 columns on medium screens and up) */}
-          <div className="col-md-4"> 
-            <NewsItem title="checktitle1" description="describtion1" imageurl = "https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?cs=srgb&dl=pexels-binyamin-mellish-186077.jpg&fm=jpg"  newsUrl = "todo"/>
+          {this.state.articles.map((element)=>{
+            console.log(element)
+            return  <div className="col-md-4"> 
+            <NewsItem  key = {element.url} title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageurl = {element.urlToImage}  newsUrl = {element.url}/>
           </div>
-          <div className="col-md-4">
-            <NewsItem title="checktitle1" description="describtion1" />
-          </div>
-          <div className="col-md-4">
-            <NewsItem title="checktitle1" description="describtion1" />
-          </div>
+          })}
+         
+         
         </div>
       </div>
     );
