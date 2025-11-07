@@ -3,249 +3,52 @@ import NewsItem from './NewsItem'
 
 
 export class News extends Component {
-  articles=   [
-        {
-            "source": {
-                "id": "the-washington-post",
-                "name": "The Washington Post"
-            },
-            "author": "Natalie Allison, Cat Zakrzewski, Katrina Northrop, Adam Taylor",
-            "title": "Trump directs Pentagon to test nuclear weapons for first time since 1992 - The Washington Post",
-            "description": "The president said he wanted testing to occur “on an equal basis” with Russia and China, just before he met his Chinese counterpart for high-stakes trade talks.",
-            "url": "https://www.washingtonpost.com/politics/2025/10/29/trump-nuclear-test-plans/",
-            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/ZSNKSAYKGATUKZLPUKVIRYNROQ_size-normalized.jpg&w=1440",
-            "publishedAt": "2025-10-30T06:15:18Z",
-            "content": "GYEONGJU, South Korea President Donald Trump on Thursday morning said he directed the Pentagon to begin testing nuclear weapons on an equal basis with Russia and China, an apparent attempt to flex th… [+113 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Variety"
-            },
-            "author": "Jennifer Maas",
-            "title": "‘When Women Thrive, the Community Thrives’: Inside Variety’s Power of Women Event Featuring Jamie Lee Curtis, Sydney Sweeney, Kate Hudson, Nicole Scherzinger and Wanda Sykes - Variety",
-            "description": "Kate Hudson, Sydney Sweeney, Wanda Sykes, Nicole Scherzinger and Jamie Lee Curtis were at the center of the star-studded Variety Power of Women LA.",
-            "url": "https://variety.com/2025/scene/news/variety-power-of-women-1236565276/",
-            "urlToImage": "https://variety.com/wp-content/uploads/2025/10/POW.png?w=1000&h=563&crop=1",
-            "publishedAt": "2025-10-30T06:13:17Z",
-            "content": "Kate Hudson, Sydney Sweeney, Wanda Sykes, Nicole Scherzinger and Jamie Lee Curtis were at the center of the star-studded Variety Power of Women presented by Lifetime event in Los Angeles Wednesday ni… [+5382 chars]"
-        },
-        {
-            "source": {
-                "id": "associated-press",
-                "name": "Associated Press"
-            },
-            "author": "Ronald Blum",
-            "title": "Yesavage strikes out 12 as rookie pitches Blue Jays past Dodgers 6-1 for 3-2 lead in World Series - AP News",
-            "description": "Trey Yesavage set a World Series rookie record with 12 strikeouts, and the Toronto Blue Jays opened Game 5 with back-to-back homers in a 6-1 victory over the Los Angeles Dodgers that moved them within one win of their first championship since 1993. Davis Schn…",
-            "url": "https://apnews.com/article/world-series-dodgers-blue-jays-score-yesavage-6fb8f63ff7e1cc97ac1f51bd92ff5e25",
-            "urlToImage": "https://dims.apnews.com/dims4/default/20f9e6f/2147483647/strip/true/crop/3511x1975+0+183/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F59%2F41%2Fd5accd47d9a8141231e6e0af60d4%2F129bc642b88a42a8820818e77d555b8e",
-            "publishedAt": "2025-10-30T06:05:00Z",
-            "content": "LOS ANGELES (AP) Trey Yesavage soaked in Dodger Stadium, filled with 52,175 fans about to watch him pitch in the World Series, and thought back to starting his season in front of 327 spectators in th… [+6180 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "DW (English)"
-            },
-            "author": "Jenipher Camino Gonzalez",
-            "title": "Trump says South Korea can build nuclear-powered submarine - DW",
-            "description": "Nuclear submarine technology is among the most sensitive and highly guarded technologies in the United States. President Donald Trump says South Korea can build the vessel in Philadelphia.",
-            "url": "https://www.dw.com/en/trump-says-south-korea-can-build-nuclear-powered-submarine/a-74549267",
-            "urlToImage": "https://static.dw.com/image/73522492_6.jpg",
-            "publishedAt": "2025-10-30T05:58:25Z",
-            "content": "US President Donald Trump said on Thursday that he has granted South Korea the approval to to build a nuclear-powered submarine in the United States.\r\nThe remarks come as Trump is in South Korea, whe… [+1377 chars]"
-        },
-        {
-            "source": {
-                "id": "cbs-news",
-                "name": "CBS News"
-            },
-            "author": "Kaia  Hubbard",
-            "title": "Government shutdown continues as senators express cautious optimism about talks - CBS News",
-            "description": "Senate Majority Leader John Thune said talks among rank-and-file senators aimed at ending the government shutdown have ramped up.",
-            "url": "https://www.cbsnews.com/live-updates/government-shutdown-latest-snap-benefits-impasse/",
-            "urlToImage": "https://assets3.cbsnewsstatic.com/hub/i/r/2025/10/29/3eb85981-b306-4de2-9ea3-6c9f5719351f/thumbnail/1200x630g2/46a102bb10d8360787eaadd9bf2109fb/gettyimages-2243474452.jpg",
-            "publishedAt": "2025-10-30T04:57:38Z",
-            "content": "Senate Minority Leader Chuck Schumer of New York criticizes Republicans' health care policies at a news conference at the Capitol in Washington, D.C., on Oct. 29, 2025.\r\nJ. Scott Applewhite / AP\r\nA g… [+2306 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "CNET"
-            },
-            "author": "See full bio",
-            "title": "Deepfake Videos Are More Realistic Than Ever. How Can You Spot if a Video Is Real or Sora AI? - CNET",
-            "description": "Figuring out if a video is made with OpenAI's Sora app is difficult, but there are some visual clues.",
-            "url": "https://www.cnet.com/tech/services-and-software/deepfake-videos-are-more-realistic-than-ever-how-can-you-spot-if-a-video-is-real-or-sora-ai/",
-            "urlToImage": "https://www.cnet.com/a/img/resize/029e818f542e695b1e3a60cc9bcbe97a220ffdc9/hub/2025/09/26/740849d5-a0ab-499b-b9fe-5d54c27c9968/ai-cnet-3.png?auto=webp&fit=crop&height=675&width=1200",
-            "publishedAt": "2025-10-30T04:30:35Z",
-            "content": "AI-generated videos are everywhere, from deepfakes of celebrities and false disaster broadcasts to viral videos of bunnies on a trampoline. Sora, the AI video generator from ChatGPT's parent company,… [+7186 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Silver Screen and Roll "
-            },
-            "author": "Karin Abcarians",
-            "title": "Austin Reaves game-winner gives Lakers victory over Wolves - Silver Screen and Roll",
-            "description": "It wasn’t pretty in the fourth quarter, but Austin Reaves saved the day to give the Lakers another win over the Wolves.",
-            "url": "https://www.silverscreenandroll.com/lakers-scores-results/98928/lakers-vs-wolves-recap-box-score-stats-final-austin-reaves-jake-laravia-dalton-knecht",
-            "urlToImage": "https://platform.silverscreenandroll.com/wp-content/uploads/sites/144/2025/10/imagn-27450621.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
-            "publishedAt": "2025-10-30T04:21:00Z",
-            "content": "The undermanned Lakers secured an impressive, 116-115 win over the Wolves on Wednesday night.\r\nThe Lakers were up by as many as 20 points against the Wolves, but trailed by one with 10.6 seconds left… [+3809 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Deadline"
-            },
-            "author": "Glenn Garner",
-            "title": "Floyd Roger Myers Jr. Dies: ‘Fresh Prince of Bel-Air’ Child Actor Was 42 - Deadline",
-            "description": "Floyd Roger Myers Jr., the former child actor who appeared on 'The Fresh Prince of Bel-Air', has died. He was 42.",
-            "url": "http://deadline.com/2025/10/floyd-roger-myers-jr-dies-42-1236602502/",
-            "urlToImage": "https://deadline.com/wp-content/uploads/2025/10/Floyd-Roger-Myers-Jr.png?w=1024",
-            "publishedAt": "2025-10-30T04:00:00Z",
-            "content": "Floyd Roger Myers Jr., the former child actor who appeared on The Fresh Prince of Bel-Air, has died. He was 42.\r\nThe actor died from a heart attack on Wednesday morning at his home in Maryland, his m… [+944 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BBC News"
-            },
-            "author": null,
-            "title": "Dutch centrist liberals neck and neck in close finish with populist Wilders - BBC",
-            "description": "Rob Jetten's D66 party celebrates but with 90% of votes counted the result is too close to call.",
-            "url": "https://www.bbc.com/news/articles/cpwvy4w875vo",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/2a5b/live/7a73fd60-b548-11f0-b2a1-6f537f66f9aa.jpg",
-            "publishedAt": "2025-10-30T03:47:52Z",
-            "content": "Paul Kirby,Europe digital editor and \r\nAnna Holligan,Hague correspondent in Leiden\r\nRob Jetten, 38, led a highly polished campaign and outperformed his rivals in TV debates\r\nRob Jetten's centrist-lib… [+5859 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Deadline"
-            },
-            "author": "Glenn Garner, Anthony D'Alessandro",
-            "title": "Paramount Animation President Ramsey Naito Departing Studio - Deadline",
-            "description": "As Paramount begins cleaning house under CEO David Ellison, Paramount Animation's President Ramsey Naito is the latest to step down from the company.",
-            "url": "http://deadline.com/2025/10/paramount-animation-ramsey-naito-exits-1236602492/",
-            "urlToImage": "https://deadline.com/wp-content/uploads/2025/10/Ramsey-Naito-Paramount-Animation-2-shot.jpg?w=1024",
-            "publishedAt": "2025-10-30T03:30:00Z",
-            "content": "As Paramount begins cleaning house under new CEO David Ellison, Paramount Animation‘s President Ramsey Naito is the latest to step down from the company.\r\nPreviously the head of Nickelodeon Animation… [+4209 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BBC News"
-            },
-            "author": null,
-            "title": "Daughter criticises Australia cruise operator after mother dies on island - BBC",
-            "description": "Katherine Rees said her mum, 80, had fallen ill during a hike on a remote Australian island and was told to return to the ship by herself.",
-            "url": "https://www.bbc.com/news/articles/cwyndvj3640o",
-            "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6995/live/7e53abc0-b54c-11f0-a50e-9f233dbf9541.jpg",
-            "publishedAt": "2025-10-30T02:10:16Z",
-            "content": "Suzanne Rees was found dead hours after her cruise boat left Lizard Island\r\nThe daughter of a woman who was left behind by a cruise ship on a remote island and later died has accused the operator of … [+3012 chars]"
-        },
-        {
-            "source": {
-                "id": "the-washington-post",
-                "name": "The Washington Post"
-            },
-            "author": "Anumita Kaur, Angie Orellana Hernandez",
-            "title": "Former Illinois sheriff’s deputy convicted in killing of Sonya Massey - The Washington Post",
-            "description": "Sonya Massey called 911 from her Springfield, Illinois, home in July 2024 to report a prowler. Sean Grayson was one of two deputies to respond to the call.",
-            "url": "https://www.washingtonpost.com/nation/2025/10/29/sonya-massey-killing-verdict/",
-            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/DCAXMO6MJ5KY7U42BOYNEOUX2M.jpg&w=1440",
-            "publishedAt": "2025-10-30T02:05:10Z",
-            "content": "Sonya Massey called 911 from her Springfield, Illinois, home in July 2024 to report a prowler. Sean Grayson was one of two deputies to respond to the call.\r\nUpdated October 29, 2025 at 5:32 p.m. EDT4… [+12 chars]"
-        },
-        {
-            "source": {
-                "id": "associated-press",
-                "name": "Associated Press"
-            },
-            "author": "Samy Magdy",
-            "title": "Sudan's paramilitary forces killed hundreds at a hospital in Darfur, residents and aid workers say - AP News",
-            "description": "Sudan's paramilitary forces have reportedly killed hundreds at a hospital, including patients, after seizing the provincial capital of North Darfur. The U.N., displaced residents and aid workers are reporting this and other atrocities by the Rapid Support For…",
-            "url": "https://apnews.com/article/sudan-hospital-rsf-darfur-fasher-who-3ac305299da5ee388429f3352ca5c6fa",
-            "urlToImage": "https://dims.apnews.com/dims4/default/bf0bfe0/2147483647/strip/true/crop/1983x1115+0+103/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F05%2F86%2F03314ae47eb7ce585fa52266a210%2F904bfb33410849fb90e0b08c3e062553",
-            "publishedAt": "2025-10-30T01:11:00Z",
-            "content": "CAIRO (AP) Sudans paramilitary forces killed hundreds of people at a hospital, including patients, after they seized the provincial capital of North Darfur over the weekend, according to the U.N., di… [+7464 chars]"
-        },
-        {
-            "source": {
-                "id": "cnn",
-                "name": "CNN"
-            },
-            "author": "Avery Schmitz",
-            "title": "Hurricane Melissa devastates Jamaica: in pictures - CNN",
-            "description": "Hurricane Melissa left a trail of destruction as it moved across Jamaica, seen for the first time from space in new satellite images obtained from Vantor.",
-            "url": "https://www.cnn.com/2025/10/29/americas/pictures-devastating-aftermath-hurricane-melissa-jamaica-latam-intl",
-            "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/c-2025-10-29t223837z-1574639039-rc2mlhaddh6d-rtrmadp-3-storm-melissa.jpg?c=16x9&q=w_800,c_fill",
-            "publishedAt": "2025-10-30T01:04:00Z",
-            "content": "Hurricane Melissa left a trail of destruction as it moved across Jamaica, seen for the first time from space in new satellite images obtained from Vantor.\r\nThe storm made landfall in Jamaica on Tuesd… [+1907 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "NBCSports.com"
-            },
-            "author": "Mike Florio",
-            "title": "NBA won’t be paying Terry Rozier, after all - NBC Sports",
-            "description": "After last Thursday's indictment was unveiled in a two-pronged gambling scandal, the NBA placed Miami Heat guard Terry Rozier on leave.",
-            "url": "https://www.nbcsports.com/nfl/profootballtalk/rumor-mill/news/nba-wont-be-paying-terry-rozier-after-all",
-            "urlToImage": "https://nbcsports.brightspotcdn.com/dims4/default/18be569/2147483647/strip/true/crop/3492x1964+0+570/resize/1440x810!/quality/90/?url=https%3A%2F%2Fnbc-sports-production-nbc-sports.s3.us-east-1.amazonaws.com%2Fbrightspot%2Fd0%2F4b%2F33a4fc1949f9ae6f432453efd035%2Fhttps-delivery-gettyimages.com%2Fdownloads%2F2238172592",
-            "publishedAt": "2025-10-30T00:06:39Z",
-            "content": "After last Thursdays indictment was unveiled in a two-pronged gambling scandal, the NBA placed Miami Heat guard Terry Rozier on leave. It was believed hed be paid.\r\nHe wont be, at least for now.\r\nThe… [+688 chars]"
-        },
-        {
-            "source": {
-                "id": "bloomberg",
-                "name": "Bloomberg"
-            },
-            "author": "Alicia Diaz",
-            "title": "Senate Rebuffs Trump on Canada Tariffs Amid GOP Dissent on Trade - Bloomberg.com",
-            "description": "The Republican-controlled Senate narrowly passed a bill to end Donald Trump’s tariffs on Canada, highlighting GOP divisions over the duties just days after the president threatened to increase them further to punish the US’s northern neighbor.",
-            "url": "https://www.bloomberg.com/news/articles/2025-10-29/senate-rebuffs-trump-on-canada-tariffs-amid-gop-dissent-on-trade",
-            "urlToImage": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iw.90A9DVgww/v1/1200x798.jpg",
-            "publishedAt": "2025-10-29T22:16:03Z",
-            "content": "The Republican-controlled Senate narrowly passed a bill to end Donald Trumps tariffs on Canada, highlighting GOP divisions over the duties just days after the president threatened to increase them fu… [+121 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Live Science"
-            },
-            "author": "Elizabeth Howell",
-            "title": "Mystery of the sun's mind-bogglingly hot atmosphere may finally be solved - Live Science",
-            "description": "Scientists have spotted elusive \"magnetic waves\" in the sun's atmosphere that may explain why the sun's corona is much hotter than its surface.",
-            "url": "https://www.livescience.com/space/the-sun/mystery-of-the-suns-mind-bogglingly-hot-atmosphere-may-finally-be-solved",
-            "urlToImage": "https://cdn.mos.cms.futurecdn.net/sCMN97DDBbiUmrGFw5jrY4-1920-80.jpg",
-            "publishedAt": "2025-10-29T22:14:00Z",
-            "content": "A hot mystery on the sun may be close to being solved.\r\nFor decades, scientists have been trying to understand why the sun\r\n's outer atmosphere is so much hotter than its surface, despite being farth… [+5479 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Investor's Business Daily"
-            },
-            "author": null,
-            "title": "Stock Market Today: Dow Ends Lower As Traders Slash Rate-Cut Bets; Nvidia Holds To $5 Trillion Mark - Investor's Business Daily",
-            "description": "Stock Market Today: The Dow Jones index falls Wednesday as the Fed cut rates. Nvidia stock surged to new highs.",
-            "url": "https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-fed-decision-powell-nvidia-nvda-stock-2/",
-            "urlToImage": "https://www.investors.com/wp-content/uploads/2022/06/Stock-jeromepowell2022-02-gov.jpg",
-            "publishedAt": "2025-10-29T21:47:00Z",
-            "content": "Information in Investors Business Daily is for informational and educational purposes only and should not be construed as an offer, recommendation, solicitation, or rating to buy or sell securities. … [+1064 chars]"
-        }
-    ]
+  
+    async componentDidMount(){
+        console.log("cdm")
+        let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1fbd796fddc743a0bbd0c9c7498a6d98&pageSize=10&page=0&pageSize=20";
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+        this.setState({articles: parsedData.articles})
+   
+    }
    constructor(){
     super();
     console.log("new trigered")
     this.state = {
-      articles : this.articles,
-      loading : false
+      articles : [],
+      loading : false,
+      page : 1
     }
+  }
+  handlePrevClick = async ()=>{
+    console.log("previous")
+         let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=1fbd796fddc743a0bbd0c9c7498a6d98&pageSize=10&page=${this.state.page-1}&pageSize=20`;
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+        this.setState({articles: parsedData.articles,
+        page : this.state.page + 1
+
+        })
+  }
+   handleNextClick = async()=>{
+    console.log("next");
+    if(Math.ceil(this.state.totalResults/20) > this.state.page+1    ){
+
+    }else{
+    
+      let url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=1fbd796fddc743a0bbd0c9c7498a6d98&pageSize=10&page=${this.state.page+1}&pageSize=20`;
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+        this.setState({articles: parsedData.articles,
+        page : this.state.page + 1
+
+        })
+    }
+        
   }
   render() {
     return (
@@ -257,11 +60,15 @@ export class News extends Component {
           {this.state.articles.map((element)=>{
             console.log(element)
             return  <div className="col-md-4"> 
-            <NewsItem  key = {element.url} title={element.title.slice(0,45)} description={element.description.slice(0,88)} imageurl = {element.urlToImage}  newsUrl = {element.url}/>
+            <NewsItem  key = {element.url} title={(element.title || "").slice(0, 45)} description={(element.description || "").slice(0, 88)} imageurl = {element.urlToImage}  newsUrl = {element.url}/>
           </div>
           })}
          
          
+        </div>
+        <div className="d-flex justify-content-between my-4">
+          <button disabled = {this.state.page <= 1} className="btn btn-primary" onClick={this.handlePrevClick}>&larr; Previous</button>
+          <button disabled = {this.state.page >= 5} className="btn btn-primary" onClick={this.handleNextClick}>Next &rarr;</button>
         </div>
       </div>
     );
